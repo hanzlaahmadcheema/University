@@ -3,7 +3,6 @@
 using namespace std;
 
 //Using hash
-
 int main() {
     int arr[] = {3, 1, 4, 6, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
