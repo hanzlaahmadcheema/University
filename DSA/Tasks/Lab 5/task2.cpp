@@ -43,7 +43,7 @@ void printArr (int arr[], int n) {
 
 int main() {
     int size = 6;
-    int arrBubble[size] = {5, 2, 9, 1, 5, 6};
+    int arrBubble[size] = {3, 1, 4, 1, 5, 9};
 
     cout << "Bubble: Before sorting: ";
     printArr(arrBubble, size);
