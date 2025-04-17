@@ -53,7 +53,7 @@ int main() {
     cout << "Bubble: After sorting: ";
     printArr(arrBubble, size);
 
-    int arrInsertion[size] = {5, 2, 9, 1, 5, 6};
+    int arrInsertion[size] = {3, 1, 4, 1, 5, 9};
 
     cout << "Insertion: Before sorting: ";
     printArr(arrInsertion, size);
