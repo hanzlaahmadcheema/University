@@ -30,13 +30,14 @@ public:
 
 void nextGreater(int arr[], int n) {
     Stack s;
-    int res[n];
+    int* res = new int[n];
     for (int i = n - 1; i >= 0; i--) {
         while (!s.isEmpty() && s.peek() <= arr[i]) s.pop();
         res[i] = s.isEmpty() ? -1 : s.peek();
         s.push(arr[i]);
     }
     for (int i = 0; i < n; i++) cout << res[i] << " ";
+    delete[] res;
 }
 
 int main() {
