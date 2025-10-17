@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: rgb(31, 31, 185);
+    height: 60px;
+    display: flex; 
+    justify-content: space-between; 
+    margin: 0;
+    padding: 0;
+    }
+
+img {
+    margin: 10px;
+    float: left;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-right: 30pc;
+    
+}    
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.background {
+    display: block;
+    align-content: center;
+    width: auto;
+    height: 30pc;
+    background-image: url("https://moellim.com/wp-content/uploads/2025/02/Riphah-International-University-Lahore-900x580-1.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.background h1 {
+    color: rgb(187, 19, 19);
+    font-size: 50px;
+}
+
+.background p {
+    color: white;
+    font-size: 25px;
+}
+
+.background button {
+    background-color: rgb(187, 19, 19);
+    color: white;   
+    border: none;
+    font-size: 15px;
+    padding: 10px 60px;
+}
+
+.strip {
+    margin: 20px 40px;
+    height: 50px;
+    background-color: rgb(187, 19, 19);
+    align-content: center;
+    color: white;
+    padding: 5px 20px;
+}
+
+.firstcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: auto;
+    height: 20pc;
+    background-color: rgb(231, 225, 225);
+    padding: 0px 40px;
+}   
+
+.firstcontainer img {
+    margin: 0;
+    padding: 0;
+}
+
+.containerp1 {
+    align-content: center;
+    padding-right: 30px;
+    font-size: 18px;
+}
+
+.containerp2 {
+    align-content: center;
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.containerimg {
+    margin: 0;
+    padding: 0;
+}
+
+.secondcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: auto;
+    height: 20pc;
+    padding: 0px 40px;
+    margin: 20px 0px;
+}   
+
+.thirdcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background-image: url("https://t3.ftcdn.net/jpg/05/48/45/64/360_F_548456420_guNSCQd5JebmeL9mgbcO3QaiemVMY6Q3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    gap: 5px;
+    padding: 20px;
+}
+
+.thirdcontainer h1 {
+    color: rgb(255, 174, 0);
+    margin: 0px;
+}
+
+.thirdcontainer button {
+    width: 70%;
+    padding: 10px 0px;
+    background-color: rgb(255, 174, 0);
+    border: none;
+}
+.forthcontainer {
+    padding: 40px 80px;
+    
+}
+
+.forthcontainer form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+    align-items: start;
+    border: 4px solid black;
+    padding: 20px;
+}
+
+.form-pair {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-pair label {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.form-pair input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
