@@ -1,8 +1,6 @@
 #include <iostream>
-
 using namespace std;
 
-//Nested Loops Simple Comparison Count
 int main() {
     int n = 10; // 10, 100, 1000, 10000
     int arr[n];
