@@ -284,6 +284,168 @@ console.log(`${x} and ${y} are equal!`);
 }
 console.log(findLargest(-2, 77));            
 console.log(findLargest(33, 33));
+
+function helpMe(){
+let msg = "I'm on fire!";
+msg; 
+}
+msg; 
+
+
+
+
+
+0
+let bird = 'mandarin duck';
+function birdWatch(){
+let bird = 'golden pheasant';
+console.log(bird); 
+}
+console.log(bird); 
+birdWatch();
+
+let radius = 8;
+if(radius > 0){
+const PI = 3.14 ;
+let circ = 2 * PI * radius;
+}
+console.log(radius); 
+
+
+function outer() {
+let hero = "Black Panther";
+function inner() {
+let cryForHelp = `${hero}, please save me!`
+console.log(cryForHelp);
+}
+inner();
+}
+outer();
+function callTwice(func) {
+func();
+func();
+}
+function laugh() {
+}
+console.log("HAHAHAHAHAHAHAHHAHAHAHAH");
+callTwice(laugh); 
+function makeBetweenFunc(min, max) {
+    return function (val) {
+        return val >= min && val <= max;
+    }
+}
+const inAgeRange = makeBetweenFunc(18, 100);
+console.log(inAgeRange(17)); 
+console.log(inAgeRange(68)); 
+const math = {
+blah: 'Hi!',
+add(x, y) {
+return x + y;
+},
+multiply(x, y) {
+return x * y;
+}
+}
+console.log(math.add(50, 60));
+
+const person = {
+first: 'Robert',
+last: 'Herjavec',
+fullName() {
+return `${this.first} ${this.last}`
+}
+}
+console.log(person.fullName()); 
+person.last = "Plant";
+console.log(person.fullName()); 
+
+
+
+
+
+
+
+const texts = ['rofl', 'lol', 'omg', 'ttyl'];
+const caps = texts.map(function (t){
+return t.toUpperCase();
+})
+console.log(texts); 
+console.log(caps); 
+const square2 = (x) => { return x * x;
+}
+console.log(square2(4));
+const sum = (x, y) => {
+return x + y;
+}
+console.log(sum(4, 5));
+
+const square1 = x => {
+return x * x;
+}
+console.log(square1(4));
+
+const singASong = () => {
+return "LA LA LA LA LA LA";
+}
+console.log(singASong());
+let movies = [
+"The Fantastic Mr. Fox",
+"Mr. and Mrs. Smith",
+"Mrs. Doubtfire",
+"Mr. Deeds"
+]
+let movie = movies.find(movie => {
+return movie.includes ('Mrs.')
+}) 
+console.log(movie);
+let movie2 = movies.find(m => m.indexOf('Mrs')=== 0)
+console.log(movie2);
+
+const nums1 =[9, 8, 7, 6, 5, 4, 3, 2, 1];
+const odds = nums1.filter(n => {
+return n % 2 === 1; 
+
+})
+console.log(odds);
+
+const smallNums = nums1.filter (n => n < 5 ) ;
+
+console.log(smallNums);
+const words = ["dog", 'dig', 'log', 'bag', 'wag'];
+console.log(words.every(word => word.length === 3));
+console.log(words.every(word => word [0] === 'd'));
+
+console.log(words.every(w => {
+let last_letter = w[w.length - 1];
+return last_letter === 'g'
+})) 
+const words1 = ['dog', 'jello', 'log', 'cupcake', 'bag', 'wag'];
+
+
+console.log(words1.some(word1 => word1.length > 4));
+
+console.log(words1.some(word => word [0] === 'Z'));
+
+
+console.log(words1.some(w => w. includes ('cake')));
+
+let arr=[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+return accumulator + currentValue;
+});
+console.log(arr);
+let grades = [89, 96, 58, 77, 62, 93, 81, 99, 73];
+const topScore = grades.reduce((max, currVal) => {
+if (currVal > max) return currVal;
+return max;
+})
+console.log(topScore);
+
+
+const topScore1 = grades.reduce((max, currVal) => (
+Math.max(max, currVal)
+))
+console.log(topScore1);
+
 function rant(message) {
     console.log(message.toUpperCase());
     console.log(message.toUpperCase());
