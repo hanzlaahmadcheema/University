@@ -225,27 +225,150 @@ console.log("colors[3] = 'green'");
 console.log(colors[3] = 'green');
 console.log("colors[4] = 'blue'");
 console.log(colors[4] = 'blue');
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
-console.log("");
-console.log();
+const animals = [ 'lions', 'tigers', 'bears' ];
+console.log("const animals = [ 'lions', 'tigers', 'bears' ];");
+for (let i = 0 ; i < animals.length; i++) {
+console.log(i, animals[i]);
+}
+let str1 = 'LOL';
+console.log("let str1 = 'LOL';");
+for (let i = 0 ; i <= 4 ; i++) {
+console.log("Outer:", i);
+for (let j = 0 ; j < str1.length; j++) {
+console.log(' Inner:', str1[j]);
+}
+}
+let num = 0;
+console.log("let num = 0;");
+while (num < 10) {
+console.log(num);
+num++;
+}
+let subreddits = [ 'soccer', 'popheads', 'cringe', 'books' ];
+console.log("let subreddits = [ 'soccer', 'popheads', 'cringe', 'books' ];");
+for (let sub of subreddits) {
+console.log(`${sub} - www.reddit.com/r/${sub}`);
+}           
+const magicSquare = [
+[2, 7, 6],
+[9,5,1],
+[4,3,8]
+];
+for (let row of magicSquare) {
+let sum = 0;
+for (let num of row) {
+sum += num;
+}
+console.log(`Row of ${row} sums to ${sum}`);
+}
+function grumpus() {
+console.log('ugh...you again...');
+console.log('for the last time...');
+console.log('LEAVE ME ALONE!!!');
+}
+console.log(grumpus());
+function greet(person) {
+console.log(`Hi, ${person}!`);
+}
+console.log(greet("Khan"));
+function findLargest(x, y) {
+if (x > y) {
+console.log(`${x} is larger!`);
+}
+else if (x < y) {
+console.log(`${y} is larger!`);
+}
+else {
+console.log(`${x} and ${y} are equal!`);
+}
+}
+console.log(findLargest(-2, 77));            
+console.log(findLargest(33, 33));
+function rant(message) {
+    console.log(message.toUpperCase());
+    console.log(message.toUpperCase());
+    console.log(message.toUpperCase());
+}
+console.log(rant("I hate beets"));
+function isSnakeEyes(die1, die2) {
+    if (die1 === 1 && die2 === 1) {
+        console.log("Snake Eyes!");
+    } else {
+        console.log("Not Snake Eyes!");
+    }
+}
+console.log(isSnakeEyes(1,1));
+console.log(isSnakeEyes(1,5));
+console.log(isSnakeEyes(4,5));
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+console.log(multiply(2,3));
+console.log(multiply(9,9));
+console.log(multiply(5,4));
+function isShortsWeather(temperature) {
+    if (temperature >= 75) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(isShortsWeather(80));
+console.log(isShortsWeather(48));
+console.log(isShortsWeather(75));
+function lastElement(arr) {
+    if (arr.length === 0) {
+        return null;
+    } else {
+        return arr[arr.length - 1];
+    }
+}
+console.log(lastElement([3,5,7]));
+console.log(lastElement([1]));
+console.log(lastElement([]));
+function capitalize(str) {
+    if (str.length === 0) {
+        return str;
+    }
+    let firstLetter = str[0].toUpperCase();
+    let restOfString = str.slice(1);
+    return firstLetter + restOfString;
+}
+console.log(capitalize('eggplant'));
+console.log(capitalize('pamplemousse'));
+console.log(capitalize('squid'));
+function sumArray(arr) {
+    let total = 0;
+    for (let num of arr) {
+        total += num;
+    }
+    return total;
+}
+console.log(sumArray([1,2,3]));
+console.log(sumArray([2,2,2,2]));
+console.log(sumArray([50,50,1]));
+function returnDay(num) {
+    const daysOfWeek = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ];
+    if (num < 1 || num > 7) {
+        return null;
+    } else {
+        return daysOfWeek[num - 1];
+    }
+}
+console.log(returnDay(1));
+console.log(returnDay(7));
+console.log(returnDay(4));
+console.log(returnDay(0));
+const square = function(num) {
+    return num * num;
+};
+console.log(square(4));
+console.log(square(3));
