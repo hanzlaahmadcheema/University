@@ -193,6 +193,7 @@ console.log("! (0 === 0)");
 console.log(! (0 === 0));
 console.log("!(3 <= 4)");
 console.log(!(3 <= 4));
+//Slide 4 ------------------------------------------------------------------------------------------------------------------
 let students = [];
 console.log("let students = [];");
 console.log(students);
