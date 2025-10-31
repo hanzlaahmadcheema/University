@@ -4,7 +4,7 @@ using namespace std;
 class Queue {
 private:
     int arr[MAX];
-    int front;
+    int front;  
     int rear;
 public:
     Queue() {

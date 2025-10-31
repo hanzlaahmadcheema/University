@@ -57,3 +57,17 @@ public:
         enqueue(value);
     }
 };
+int main() {
+    Queue q;
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
+    cout << "Original Queue:" << endl;
+    q.display();
+    q.reverse();
+    cout << "Reversed Queue:" << endl;
+    q.display();
+    return 0;
+}
