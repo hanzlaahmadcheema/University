@@ -11,7 +11,7 @@ public:
         front = -1;
         rear = -1;
     }
-    bool isEmpty() {
+    bool isEmpty() {    
         return front == -1 || front > rear;
     }
     bool isFull() {
