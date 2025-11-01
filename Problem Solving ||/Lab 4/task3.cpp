@@ -11,7 +11,7 @@ public:
         front = -1;
         rear = -1;
     }
-    bool isEmpty() {
+    bool isEmpty() {    
         return front == -1 || front > rear;
     }
     bool isFull() {
@@ -49,3 +49,13 @@ public:
         cout << endl;
     }
 };
+int main() {
+    Queue q;
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.display();
+    q.dequeue();
+    q.display();
+    return 0;
+}
