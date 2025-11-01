@@ -1,152 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My CV - Hanzla Ahmad</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-    header, footer { background: #f4f4f4; padding: 10px; }
-    h1, h2, h3 { margin: 5px 0; }
-    section { margin-bottom: 20px; }
-    nav ul { list-style: none; padding: 0; display: flex; gap: 15px; }
-    nav a { text-decoration: none; color: #333; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #999; padding: 8px; text-align: left; }
-    progress { width: 100%; }
-    figure { margin: 0; }
-  </style>
+ <meta charset="UTF-8">
+ <title> Lab Task - Form design in html</title>
 </head>
 <body>
+  <h1>Lab Task - Form design in html</h1>
+  <form>
+    <h2>Part 1: Personal Details</h2>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required><br><br>
 
-<header>
-  <h1>CV</h1>
-  <h2>Hanzla Ahmad</h2>
-  <address>
-    Lahore, Punjab, Pakistan <br>
-    Email: <a href="mailto:hanzlaahmad100@gmail.com">hanzlaahmad100@gmail.com</a><br>
-    LinkedIn: <a href="https://www.linkedin.com/in/hanzlaahmadcheema">Profile</a>
-  </address>
-</header>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required><br><br>
 
-<nav>
-  <ul>
-    <li><a href="#about">About Me</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
 
-<main>
-  <section id="about">
-    <h2>About Me</h2>
-    <p><strong>Dedicated Computer Science student</strong>.</p>
-    <blockquote>"Code is like humor. When you have to explain it, it’s bad."</blockquote>
-    <details>
-      <summary>Fun Fact</summary>
-      <p>I started coding in C++ during high school and built my first website in 2020.</p>
-    </details>
-  </section>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
 
-  <section id="education">
-    <h2>Education</h2>
-    <article>
-      <h3>Bachelor of Science in Computer Science</h3>
-      <p><time datetime="2024-09">2024</time> – Present | Riphah International University, Lahore</p>
-    </article>
-    <article>
-      <h3>Intermediate (Pre-Medical)</h3>
-      <p><time datetime="2021">2021</time> – 2023 | Aspire Group of Colleges, Chichawatni</p>
-    </article>
-    <article>
-      <h3>Matriculation (Science)</h3>
-      <p><time datetime="2019">2019</time> – 2021 | Govt. MC Modal High School, Chichawatni</p>
-    </article>
-  </section>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Programming: <code>C, C++, Java, JavaScript</code></li>
-      <li>Web: HTML, CSS, Node.js</li>
-      <li>Shopify Store Development</li>
-      <li>Database Systems</li>
-    </ul>
-    <table>
-      <caption>Skill Proficiency</caption>
-      <thead>
-        <tr>
-          <th>Skill</th>
-          <th>Level</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>HTML/CSS</td><td><progress value="90" max="100"></progress></td></tr>
-        <tr><td>JavaScript</td><td><progress value="80" max="100"></progress></td></tr>
-        <tr><td>Java</td><td><progress value="70" max="100"></progress></td></tr>
-        <tr><td>Shopify</td><td><progress value="85" max="100"></progress></td></tr>
-      </tbody>
-    </table>
-  </section>
+    <label>Gender:</label><br>
+  <input type="radio" name="gender" value="Male"> Male<br>
+  <input type="radio" name="gender" value="Female"> Female<br>
+  <input type="radio" name="gender" value="Other"> Other<br><br>
+ <label>Marital Status:</label>
+  <select name="marital_status">
+   <option value="">Select</option>
+   <option>Single</option>
+   <option>Married</option>
+   <option>Divorced</option>
+   <option>Separated</option>
+  </select>
+  <br><br>
+  <h2>Part 2: Address Details</h2>
+  <label>street address:</label>
+  <input type="text" name="street_address"><br><br>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <article>
-      <h3>Software Developer</h3>
-      <p><b>HA Entertainment</b> | <time datetime="2020-06">June 2020</time> – Present</p>
-      <p>Developed and managed a <abbr title="Over-The-Top">OTT</abbr> streaming website 
-         with multilingual support.</p>
-    </article>
-    <article>
-      <h3>Remote IT Support Specialist</h3>
-      <p><b>Ajwa Mart</b> | <time datetime="2021-07">July 2021</time> – Present</p>
-      <p>Handled POS systems, data management, and troubleshooting.</p>
-    </article>
-  </section>
+  <label>City:</label>
+  <input type="text" name="city"><br><br>
+  <label>State/Province:</label>
+  <select name="state">
+    <option value="">Select</option>
+    <option>Punjab</option>
+    <option>Sindh</option>
+    <option>Khyber Pakhtunkhwa</option>
+    <option>Balochistan</option>
+    <option>Gilgit-Baltistan</option>
+    <option>Azad Jammu and Kashmir</option>
+  </select>
+  <br><br>
+  <label for="zip">ZIP/Postal Code:</label>
+  <input type="text" id="zip" name="zip" required><br><br>
+  <label for="country">Country:</label>
+  <input type="text" id="country" name="country" required><br><br>
+  <h2>Part 3 : education</h2>
+  <label>Highest Level of Education:</label>
+  <select name="education">
+   <option value="">Select</option>
+   <option>High School</option>
+   <option>Bachelor’s</option>
+   <option>Master’s</option>
+   <option>PhD</option>
+   <option>Other</option>
+  </select>
+  <br><br>
+  
+  <label>Current Occupation:</label>
+  <input type="text" name="occupation"><br><br>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ol>
-      <li>AI-Driven Twitter Engagement Extension</li>
-      <li>HA Entertainment Movie App</li>
-      <li>Online Shopping System (C++)</li>
-      <li>Cricket ScoreCard (Java)</li>
-    </ol>
-    <figure>
-      <img src="profile.jpg" alt="Profile Picture" width="120">
-      <figcaption>Profile Picture</figcaption>
-    </figure> 
-  </section>
+  <label>Current Employer:</label>
+  <input type="text" name="employer"><br><br>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br><br>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br><br>
-      
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
-      
-      <input type="submit" value="Send">
-    </form>
-  </section>
-</main>
+  <label>Years of Experience:</label>
+  <input type="number" name="experience"><br><br>
+  <label>Skills:</label><br>
+  <input type="checkbox" name="skills" value="HTML"> HTML<br>
 
-<aside>
-  <h3>Languages</h3>
-  <ul>
-    <li>English</li>
-    <li>Urdu</li>
-  </ul>
-</aside>
-<footer>
-  <p>&copy; <time datetime="2025">2025</time> Hanzla Ahmad. All rights reserved.</p>
-</footer> 
-</body>
+  <h2>Part 4: Preferences and Interests</h2>
+
+  <label>Favorite Color:</label>
+  <input type="color" name="favorite_color"><br><br>
+
+  <label>Hobbies:</label><br>
+  <input type="checkbox" name="hobbies" value="Reading"> Reading<br>
+  <input type="checkbox" name="hobbies" value="Writing"> Writing<br>
+  <input type="checkbox" name="hobbies" value="Sports"> Sports<br>
+  <input type="checkbox" name="hobbies" value="Music"> Music<br>
+  <input type="checkbox" name="hobbies" value="Travel"> Travel<br>
+  <input type="checkbox" name="hobbies" value="Photography"> Photography<br><br>
+
+  <label>How did you hear about us?</label><br>
+  <input type="radio" name="heard" value="Social Media"> Social Media<br>
+  <input type="radio" name="heard" value="Friend/Family"> Friend/Family<br>
+  <input type="radio" name="heard" value="Online Search"> Online Search<br>
+  <input type="radio" name="heard" value="Other"> Other<br><br>
+
+  <label>What are your goals?</label><br>
+  <textarea name="goals" rows="4" cols="50"></textarea><br><br>
+
+<h2>Part 5: Additional Information</h2>
+
+  <label>Message:</label><br>
+  <textarea name="message" rows="4" cols="50"></textarea><br><br>
+
+  <label>Upload Resume:</label>
+  <input type="file" name="resume"><br><br>
+
+  <input type="checkbox" name="terms"> I agree to the Terms and Conditions<br>
+  <input type="checkbox" name="newsletter"> Subscribe to Newsletter<br><br>
+
+  <input type="submit" value="Submit Form">
+
+ </form>
+ </body>
 </html>
