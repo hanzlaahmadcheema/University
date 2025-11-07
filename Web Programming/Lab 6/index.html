@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 id="title">Welcome !</h1>
+    <p class="message">This is a paragraph.</p>
+    <div id="container"></div>
+    <button id="btn">Click Me</button>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+
+    <!--To-Do List-->
+    <h3>To-Do List</h3>
+    <input type="text" id="taskInput" placeholder="Enter task" />
+    <button id="addBtn">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <!--Form Validation-->
+    <h3>Live Form Validation</h3>
+    <form id="userForm">
+      <input type="email" id="email" placeholder="Enter your email" />
+      <small id="msg"></small>
+    </form>
+
+    <!--Image Gallery with Lightbox-->
+    <h3>Image Gallery</h3>
+    <div id="gallery">
+      <img src="https://www.economist.com/cdn-cgi/image/width=1424,quality=80,format=auto/content-assets/images/20250802_ASP506.jpg" width="100" />
+      <img src="https://www.seema.com/wp-content/uploads/2022/09/Maryam-Nawaz.jpg" width="100" />
+    </div>
+    <div id="lightbox" style="display: none">
+      <img id="lightImage" />
+    </div>
+
+    <!-- Dark/Light theme-->
+    <h3>Dark/Light Theme</h3>
+        <button id="toggleTheme">Switch Theme</button>
+        <div id="content">Welcome to My Page!</div>
+
+    <!--Dynamic Table Generator-->
+    <input type ="number" id="rows" placeholder="Rows">
+    <input type ="number" id="cols" placeholder="Columns">
+    <button id="generate">Generate Table</button>
+    <div id="tableContainer"></div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
