@@ -1,15 +1,34 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    const int size = 5;
-    int arr[size] = {1, 2, 3, 4, 5};
-    int sum = 0;
+struct Node {
+    int data;
+    Node* next;
+};
 
-    for(int i = 0; i < size; ++i) {
-        sum += arr[i];
+int main() {
+    Node* head = NULL;
+    Node* temp = NULL;
+    Node* newNode = NULL;
+
+    int n, val;
+    cout << "Enter number of nodes: ";
+    cin >> n;
+
+    for(int i = 0; i < n; i++) {
+        cout << "Enter value: ";
+        cin >> val;
+
+        newNode = new Node{val, NULL};
+        if(!head) head = newNode;
+        else temp->next = newNode;
+        temp = newNode;
     }
 
-    cout << "Sum: " << sum << endl; 
-    return 0;
+    cout << "Linked List: ";
+    temp = head;
+    while(temp) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
 }

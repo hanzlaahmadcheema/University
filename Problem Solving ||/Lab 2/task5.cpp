@@ -1,22 +1,61 @@
 #include <iostream>
 using namespace std;
 
+struct Song {
+    string title;
+    Song* next;
+};
+
+void addSong(Song*& head, string t) {
+    Song* n = new Song{t, NULL};
+    if(!head) { head = n; return; }
+
+    Song* temp = head;
+    while(temp->next) temp = temp->next;
+    temp->next = n;
+}
+
+void removeSong(Song*& head, string t) {
+    if(!head) return;
+
+    if(head->title == t) {
+        Song* del = head;
+        head = head->next;
+        delete del;
+        return;
+    }
+
+    Song* temp = head;
+    while(temp->next && temp->next->title != t) temp = temp->next;
+
+    if(temp->next) {
+        Song* del = temp->next;
+        temp->next = temp->next->next;
+        delete del;
+    }
+}
+
+void playNext(Song*& current) {
+    if(!current) {
+        cout << "No songs.\n";
+        return;
+    }
+    cout << "Playing: " << current->title << endl;
+    current = current->next;
+}
+
 int main() {
-    const int size = 5;
-    int arr[size] = {64, 34, 25, 12, 22};
-    for(int i = 0; i < size - 1; ++i) {
-        for(int j = 0; j < size - i - 1; ++j) {
-            if(arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-    cout << "Sorted: ";
-    for(int i = 0; i < size; ++i) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-    return 0;
+    Song* playlist = NULL;
+    addSong(playlist, "Song A");
+    addSong(playlist, "Song B");
+    addSong(playlist, "Song C");
+
+    Song* current = playlist;
+    playNext(current);
+    playNext(current);
+
+    removeSong(playlist, "Song B");
+
+    current = playlist;
+    playNext(current);
 }

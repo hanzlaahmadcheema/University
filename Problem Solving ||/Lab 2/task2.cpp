@@ -1,21 +1,30 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int size;
-    cout << "Enter size: ";
-    cin >> size;
-    int* arr = new int[size];
-    cout << "Enter elements:" << endl;
-    for(int i = 0; i < size; ++i) {
-        cin >> arr[i];
-    }
-    cout << "Elements in array:" << endl;
-    for(int i = 0; i < size; ++i) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-    delete[] arr;   
+struct Node {
+    int data;
+    Node* next;
+};
 
-    return 0;
+int main() {
+    Node* head = NULL;
+
+    int n, val;
+    cout << "How many nodes? ";
+    cin >> n;
+
+    for(int i = 0; i < n; i++) {
+        cout << "Enter value: ";
+        cin >> val;
+
+        Node* newNode = new Node{val, head};
+        head = newNode;
+    }
+
+    cout << "Updated List: ";
+    Node* temp = head;
+    while(temp) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
 }

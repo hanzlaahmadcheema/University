@@ -1,31 +1,46 @@
 #include <iostream>
 using namespace std;
 
+struct Node {
+    int data;
+    Node* next;
+};
+
 int main() {
-    const int size = 5;
-    int arr[size] = {10, 20, 30, 40, 50};
-    int element;
-    cout << "Element to search: ";
-    cin >> element;
-    int left = 0;
-    int right = size - 1;
-    bool found = false;
-    while(left <= right) {
-        int mid = left + (right - left) / 2;
-        if(arr[mid] == element) {
-            found = true;
-            cout << "Element " << element << " found at " << mid << endl;
+    Node* head = NULL;
+    Node* temp = NULL;
+
+    int n, val;
+    cout << "Enter number of nodes: ";
+    cin >> n;
+
+    for(int i = 0; i < n; i++) {
+        cin >> val;
+        Node* newNode = new Node{val, NULL};
+        if(!head) head = newNode;
+        else temp->next = newNode;
+        temp = newNode;
+    }
+
+    int oldVal, newVal;
+    cout << "Enter value to update: ";
+    cin >> oldVal;
+    cout << "Enter new value: ";
+    cin >> newVal;
+
+    temp = head;
+    while(temp) {
+        if(temp->data == oldVal) {
+            temp->data = newVal;
             break;
         }
-        else if(arr[mid] < element) {
-            left = mid + 1;
-        }
-        else {
-            right = mid - 1;
-        }
+        temp = temp->next;
     }
-    if(!found) {
-        cout << "Element " << element << " not found" << endl;
+
+    cout << "Updated List: ";
+    temp = head;
+    while(temp) {
+        cout << temp->data << " ";
+        temp = temp->next;
     }
-    return 0;
 }
