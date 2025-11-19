@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Prac</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bs-primary: #0d6efd;
+      }
+      body.dark {
+        --bs-primary: #1f6f8b;
+        --bs-body-bg: #111;
+        --bs-body-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand d-none d-lg-block" href="#">
+          <img src="logo.png" width="120" alt="Logo" /> MySite
+        </a>
+        <a class="navbar-brand d-lg-none" href="#">MySite</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row g-3">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm">
+            <img src="food.jpg" class="card-img-top" alt="Food" />
+            <div class="card-body">
+              <h5 class="card-title">Delicious Pasta</h5>
+              <p class="card-text d-none d-sm-block">
+                Our signature Italian dish loved by all.
+              </p>
+              <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm">
+            <img src="food.png" class="card-img-top" alt="Food" />
+            <div class="card-body">
+              <h5 class="card-title">Delicious Pasta</h5>
+              <p class="card-text d-none d-sm-block">
+                Our signature Italian dish loved by all.
+              </p>
+              <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm">
+            <img src="food.webp" class="card-img-top" alt="Food" />
+            <div class="card-body">
+              <h5 class="card-title">Delicious Pasta</h5>
+              <p class="card-text d-none d-sm-block">
+                Our signature Italian dish loved by all.
+              </p>
+              <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container mt-5">
+      <h2>Contact Us</h2>
+      <form id="contactForm" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Your Email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Form Submitted</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Your message has been sent successfully!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ <div>
+        <div class="container mt-5">
+            <h2>Todo List</h2>
+            <form id="addTask" class="mb-3">
+            <div class="input-group">
+                <input
+                type="text"
+                id="taskInput"
+                class="form-control"
+                placeholder="New Task"
+                required
+                />
+                <button type="submit" class="btn btn-success">Add Task</button>
+            </div>
+            </form>
+            <ul id="tasks" class="list-group"></ul>
+        </div>
+ </div>
+
+    <div class="container mt-5">
+      <h2>Product Gallery</h2>
+      <div class="mb-3">
+        <button class="btn btn-outline-primary filter-btn" data-cat="all">
+          All
+        </button>
+        <button class="btn btn-outline-primary filter-btn" data-cat="electronics">
+          Electronics
+        </button>
+        <button class="btn btn-outline-primary filter-btn" data-cat="clothing">
+          Clothing
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-4 mb-3 thumb" data-cat="electronics">
+          <img src="electronics.jpg" class="img-fluid" alt="Electronic 1" />
+        </div>
+        <div class="col-6 col-md-4 mb-3 thumb" data-cat="clothing">
+          <img src="clothing.jpg" class="img-fluid" alt="Clothing 1" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <h2>Items Table</h2>
+      <table class="table" id="itemsTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">Item 1</td>
+            <td>
+              <button class="btn btn-sm btn-primary editBtn">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Item</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="modalName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="modalName" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(function () {
+        const form = $("#contactForm");
+
+        form.on("submit", function (e) {
+          e.preventDefault();
+          if (!this.checkValidity()) {
+            e.stopPropagation();
+            $(this).addClass("was-validated");
+          } else {
+            const modal = new bootstrap.Modal($("#confirmModal"));
+            modal.show();
+            this.reset();
+            $(this).removeClass("was-validated");
+          }
+        });
+
+        (function ($) {
+          $.fn.flashBackground = function (duration) {
+            return this.each(function () {
+              const el = $(this);
+              el.css("transition", `background ${duration}ms`);
+              el.css("background", "yellow");
+              setTimeout(() => el.css("background", ""), duration);
+            });
+          };
+        })(jQuery);
+
+        $("p").flashBackground(800);
+
+        $("#addTask").on("submit", function (e) {
+          e.preventDefault();
+          const text = $("#taskInput").val().trim();
+          if (text) {
+            $("#tasks").append(
+              `<li>${text} <button class="remove btn btn-sm btn-danger">x</button></li>`
+            );
+            $("#taskInput").val("");
+          }
+        });
+
+        $("#tasks").on("click", ".remove", function () {
+          $(this)
+            .closest("li")
+            .fadeOut(300, function () {
+              $(this).remove();
+            });
+        });
+
+        $(".filter-btn").on("click", function () {
+          const cat = $(this).data("cat");
+          if (cat === "all") $(".thumb").fadeIn();
+          else {
+            $(".thumb").hide();
+            $(`.thumb[data-cat='${cat}']`).fadeIn();
+          }
+        });
+
+        $("#loadUsers").on("click", function () {
+          $("#spinner").show();
+          $.getJSON("/data/users.json")
+            .done(function (data) {
+              let usersHtml = "";
+              data.forEach((user) => {
+                usersHtml += `
+                <div class="card m-2" style="width: 18rem;">
+                  <img src="${user.avatar}" class="card-img-top" alt="${user.name}">
+                  <div class="card-body">
+                    <h5 class="card-title">${user.name}</h5>
+                    <p class="card-text">Email: ${user.email}</p>
+                  </div>
+                </div>`;
+              });
+              $("#userContainer").html(usersHtml);
+            })
+            .fail(() => alert("Failed to load data"))
+            .always(() => $("#spinner").hide());
+        });
+
+        $("#itemsTable").on("click", ".editBtn", function () {
+          const tr = $(this).closest("tr");
+          const name = tr.find(".name").text();
+          $("#modalName").val(name);
+          new bootstrap.Modal($("#editModal")).show();
+        });
+      });
+
+    </script>
+  </body>
+</html>
