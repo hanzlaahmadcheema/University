@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lab Task 8</title>
+<style>
+body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+input { padding: 8px; margin: 5px 0; display: block; }
+#carousel img { width: 250px; height: 150px; }
+.navbar { background: black; padding: 10px; color: white; }
+.navbar:hover { letter-spacing: 3px; transition: 0.3s; }
+.box3d { width: 120px; height: 120px; background: linear-gradient(#444, #999); margin: 10px; display: inline-block; transform: rotateY(30deg); }
+</style>
+</head>
+<body>
+<h1>Lab Task 8</h1>
+
+<h2>1. JavaScript Live Form Validation</h2>
+<input type="text" id="userName" placeholder="Enter Name" />
+<p id="nameError" style="color:red"></p>
+
+<input type="email" id="email" placeholder="Enter Email" />
+<p id="emailError" style="color:red"></p>
+
+<input type="password" id="pass" placeholder="Enter Password" />
+<p id="passError" style="color:red"></p>
+
+<h2>2. jQuery Functions</h2>
+<button id="fadeInBtn">Fade In</button>
+<button id="fadeOutBtn">Fade Out</button>
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="toggleBtn">Toggle</button>
+<button id="slideUpBtn">Slide Up</button>
+<button id="slideDownBtn">Slide Down</button>
+<button id="cssBtn">Apply CSS</button>
+<button id="appendBtn">Append</button>
+<button id="animateBtn">Animate</button>
+<div id="jqBox" style="width:200px; height:100px; background:#ddd; margin-top:15px;"></div>
+
+        <h2>3. JavaScript Mini Projects</h2>
+
+<h3>A. Drinking Water Counter</h3>
+<button id="drinkBtn">Drink Water</button>
+<p id="drinkCount">Cups: 0</p>
+
+<h3>B. Image Carousel</h3>
+<div id="carousel">
+  <img id="carImg" src="https://via.placeholder.com/250x150?text=1" />
+</div>
+<button id="nextImg">Next</button>
+
+<h3>C. Animated Navbar</h3>
+<div class="navbar">Hover Me Navbar</div>
+
+<h3>D. To-Do List</h3>
+<input type="text" id="todoInput" placeholder="Add Task" />
+<button id="addTodo">Add</button>
+<ul id="todoList"></ul>
+
+<h3>E. 3D Boxes</h3>
+<div class="box3d"></div>
+<div class="box3d"></div>
+<div class="box3d"></div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+const nameField = document.getElementById("userName");
+const emailField = document.getElementById("email");
+const passField = document.getElementById("pass");
+
+nameField.addEventListener("keyup", ()=>{
+  document.getElementById("nameError").innerText = nameField.value.length < 3 ? "Name too short" : "";
+});
+emailField.addEventListener("keyup", ()=>{
+  document.getElementById("emailError").innerText = emailField.value.includes("@") ? "" : "Invalid Email";
+});
+passField.addEventListener("keyup", ()=>{
+  document.getElementById("passError").innerText = passField.value.length < 6 ? "Weak Password" : "";
+});
+
+$("#fadeInBtn").click(()=>$("#jqBox").fadeIn());
+$("#fadeOutBtn").click(()=>$("#jqBox").fadeOut());
+$("#hideBtn").click(()=>$("#jqBox").hide());
+$("#showBtn").click(()=>$("#jqBox").show());
+$("#toggleBtn").click(()=>$("#jqBox").toggle());
+$("#slideUpBtn").click(()=>$("#jqBox").slideUp());
+$("#slideDownBtn").click(()=>$("#jqBox").slideDown());
+$("#cssBtn").click(()=>$("#jqBox").css({ background: "black", color: "white" }));
+$("#appendBtn").click(()=>$("#jqBox").append("<p>New Line</p>"));
+$("#animateBtn").click(()=>$("#jqBox").animate({ width: "300px" }, 500));
+
+let count = 0;
+$("#drinkBtn").click(function(){
+  count++;
+  $("#drinkCount").text("Cups: " + count);
+});
+
+let idx = 1;
+$("#nextImg").click(function(){
+  idx++;
+  if(idx > 3) idx = 1;
+  $("#carImg").attr("src", `https://via.placeholder.com/250x150?text=${idx}`);
+});
+
+$("#addTodo").click(function(){
+  const task = $("#todoInput").val();
+  if(task !== ""){
+    $("#todoList").append(`<li>${task}</li>`);
+    $("#todoInput").val("");
+  }
+});
+</script>
+</body>
+</html> 
