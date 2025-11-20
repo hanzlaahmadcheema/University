@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Practice Suite</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f8f9fa;
+      }
+      h2 {
+        margin-top: 40px;
+      }
+      .box,
+      #hoverBox {
+        width: 200px;
+        height: 100px;
+        background: #ddd;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      #slideMenu {
+        display: none;
+        background: lightblue;
+        padding: 10px;
+      }
+      #todoList li {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Practice Tasks</h1>
+
+    <h2>1. Change H1 Text</h2>
+    <button id="changeTitle">Change Title</button>
+
+    <h2>2. Apply Border to List Items</h2>
+    <ul id="itemsList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button id="applyBorder">Apply Border</button>
+
+    <h2>3. Mouse Enter Background Change</h2>
+    <div id="hoverBox">Hover Here</div>
+
+    <h2>4. Slide Toggle Menu</h2>
+    <button id="toggleMenu">Toggle Menu</button>
+    <div id="slideMenu">This is a sliding menu.</div>
+
+    <h2>5. Add List Item</h2>
+    <ul id="addList">
+      <li>Existing Item</li>
+    </ul>
+    <button id="addItem">Add Item</button>
+
+    <h2>6. Highlight Siblings</h2>
+    <ul id="sibList">
+      <li>One</li>
+      <li id="target">Target</li>
+      <li>Three</li>
+    </ul>
+    <button id="highlightSiblings">Highlight</button>
+
+    <h2>7. CSS Using jQuery</h2>
+    <div class="box" id="cssBox">CSS Box</div>
+    <button id="applyCSS">Apply CSS</button>
+
+    <h2>8. Form Validation</h2>
+    <form id="myForm">
+      <input type="text" id="nameField" placeholder="Name" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>9. AJAX JSON Fetch</h2>
+    <button id="loadData">Load Dummy Data</button>
+    <div id="dataContainer"></div>
+
+    <h2>10. Mini Project: To‑Do List</h2>
+    <input type="text" id="todoInput" placeholder="Add task" />
+    <button id="addTask">Add</button>
+    <ul id="todoList"></ul>
+
+    <h2>11. Image Slider</h2>
+
+    <h2>Practice Exercises</h2>
+    <button id="fadeBtn">Fade In Para</button>
+    <p id="fadePara" style="display: none">This paragraph fades in.</p>
+
+    <button id="slideDropBtn">Dropdown Menu</button>
+    <div
+      id="dropdownMenu"
+      style="display: none; background: #eef; padding: 10px"
+    >
+      Dropdown Content
+    </div>
+
+    <h2>Change Image Source</h2>
+    <img
+      id="imgSwap"
+      src="https://via.placeholder.com/150?text=A"
+      width="150"
+    />
+    <button id="swapImgBtn">Swap Image</button>
+
+    <h2>$.each() Loop</h2>
+    <button id="showArray">Show Items</button>
+    <ul id="arrayList"></ul>
+
+    <h2>Search Filter</h2>
+    <input type="text" id="searchInput" placeholder="Search..." />
+    <ul id="searchList">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Orange</li>
+      <li>Mango</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#changeTitle").click(function () {
+          $("h1").text("Title Updated via jQuery");
+        });
+
+        $("#applyBorder").click(function () {
+          $("#itemsList li").css("border", "1px solid black");
+        });
+
+        $("#hoverBox")
+          .mouseenter(function () {
+            $(this).css("background", "lightgreen");
+          })
+          .mouseleave(function () {
+            $(this).css("background", "#ddd");
+          });
+
+        $("#toggleMenu").click(function () {
+          $("#slideMenu").slideToggle();
+        });
+
+        $("#addItem").click(function () {
+          $("#addList").append("<li>New Item Added</li>");
+        });
+
+        $("#highlightSiblings").click(function () {
+          $("#target").siblings().css("background", "yellow");
+        });
+
+        $("#applyCSS").click(function () {
+          $("#cssBox").css({
+            background: "black",
+            color: "white",
+            "border-radius": "10px",
+            padding: "15px",
+          });
+        });
+
+        // $("#nameField").on("input", function () {
+        //   const nameVal = $(this).val();
+        //   const nameRegex = /^[A-Za-z\s]*$/;
+        //   if (!nameRegex.test(nameVal)) {
+        //     alert("Please enter  only letters and spaces.");
+        //     $(this).val(nameVal.replace(/[^A-Za-z\s]/g, ""));
+        //   }
+        // });
+$("#emailField").on("input", function () {
+          const emailVal = $(this).val();
+          const emailRegex = /^[A-Za-z][A-Za-z0-9._%+-]*@[a-z.]+\.[A-Za-z]{2,}$/;
+          if (!emailRegex.test(emailVal)) {
+            alert("Please enter a valid email address.");
+            $(this).val(emailVal.replace(/[^A-Za-z0-9@._%+-]/g, ""));
+          }
+        });
+        // document
+        //   .getElementById("myForm")
+        //   .addEventListener("submit", function (e) {
+        //     const nameVal = document.getElementById("nameField").value;
+        //     const nameRegex = /^[A-Za-z\s]*$/;
+        //     if (!nameRegex.test(nameVal)) {
+        //       alert("Please enter only letters and spaces.");
+        //       e.preventDefault();
+        //     }  
+        //   });        
+
+        $("#loadData").click(function () {
+          $.getJSON(
+            "https://jsonplaceholder.typicode.com/posts/1",
+            function (data) {
+              $("#dataContainer").html(
+                `<strong>Title:</strong> ${data.title}<br><p>${data.body}</p>`
+              );
+            }
+          );
+        });
+
+        $("#addTask").click(function () {
+          const task = $("#todoInput").val();
+          if (task !== "") {
+            $("#todoList").append(`<li>${task}</li>`);
+            $("#todoInput").val("");
+          }
+        });
+      });
+
+      let imgIndex = 1;
+      $("#nextSlide").click(function () {
+        imgIndex++;
+        if (imgIndex > 3) imgIndex = 1;
+        $("#slideImg").attr(
+          "src",
+          `https://via.placeholder.com/300x180?text=${imgIndex}`
+        );
+      });
+
+      $(".accHead").click(function () {
+        $(this).next().slideToggle();
+      });
+
+      $(".faqQ").click(function () {
+        $(this).next().slideToggle();
+      });
+
+      $("#fadeBtn").click(function () {
+        $("#fadePara").fadeIn();
+      });
+
+      $("#slideDropBtn").click(function () {
+        $("#dropdownMenu").slideToggle();
+      });
+
+      $("#swapImgBtn").click(function () {
+        $("#imgSwap").attr("src", "https://via.placeholder.com/150?text=B");
+      });
+
+      $("#showArray").click(function () {
+        const arr = ["One", "Two", "Three", "Four"];
+        $("#arrayList").html("");
+        $.each(arr, function (i, v) {
+          $("#arrayList").append(`<li>${v}</li>`);
+        });
+      });
+
+      $("#searchInput").keyup(function () {
+        const val = $(this).val().toLowerCase();
+        $("#searchList li").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().includes(val));
+        });
+      });
+    </script>
+  </body>
+</html>
