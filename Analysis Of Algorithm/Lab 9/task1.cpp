@@ -17,7 +17,7 @@ Node* createTree() {
     string rootVal;
     cout << "Enter root: ";
     cin >> rootVal;
-    if (rootVal == "-1") return NULL;
+    if (rootVal == "-1") return NULL;           
 
     Node* root = new Node(rootVal);
     queue<Node*> q;
