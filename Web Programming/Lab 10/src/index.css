@@ -1,0 +1,179 @@
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #e94560;
+  --text-secondary: #ffffff;
+  --accent-color: #0f3460;
+  --btn-primary: #e94560;
+  --btn-secondary: #533483;
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  color: var(--text-secondary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #e94560, #a2d2ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Card Styles */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(233, 69, 96, 0.2);
+  border-color: var(--text-primary);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.card-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Button Component Styles */
+.premium-btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s;
+  outline: none;
+}
+
+.premium-btn:focus,
+.premium-btn:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.premium-btn.primary {
+  background-color: var(--btn-primary);
+  color: white;
+}
+
+.premium-btn.secondary {
+  background-color: var(--btn-secondary);
+  color: white;
+}
+
+.premium-btn:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--btn-primary);
+}
+
+.premium-btn:active {
+  transform: scale(0.95);
+}
+
+/* Counter Styles */
+.count-display {
+  font-size: 3rem;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  margin: 1rem 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Todo Styles */
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.styled-input {
+  flex-grow: 1;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.styled-input:focus {
+  border-color: var(--text-primary);
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.todo-item {
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
