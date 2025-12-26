@@ -5,9 +5,9 @@ import Footer from './components/Footer';
 import SearchBox from './components/SearchBox';
 
 const PRODUCTS = [
-  { id: 1, title: 'White T-Shirt', price: 19.99, imageUrl: '/images/tshirt.jpg' },
-  { id: 2, title: 'Blue Jeans', price: 49.99, imageUrl: '/images/jeans.jpg' },
-  { id: 3, title: 'Sneakers', price: 69.99, imageUrl: '/images/sneakers.jpg' }
+  { id: 1, title: 'White T-Shirt', price: 19.99, imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80' },
+  { id: 2, title: 'Blue Jeans', price: 49.99, imageUrl: 'https://images.unsplash.com/photo-1602293589946-8b245fa3ac43?auto=format&fit=crop&w=600&q=80' },
+  { id: 3, title: 'Sneakers', price: 69.99, imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80' }
 ];
 
 export default function App() {

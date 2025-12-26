@@ -11,8 +11,8 @@ export default function SearchBox({ onSearch }) {
   }
 
   return (
-    <form className="search-box" onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
-      <input name="q" placeholder="Search products..." style={{ padding: '8px', marginRight: '8px', width: '200px' }} />
+    <form className="search-box" onSubmit={handleSubmit}>
+      <input name="q" placeholder="Search products..." />
       <button type="submit" className="btn btn-primary">Search</button>
     </form>
   );

@@ -1,51 +1,100 @@
+/* Grid Layout */
 .product-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--gap);
-  flex-wrap: wrap;
+  padding: 8px 0; /* Space for shadow */
 }
 
+/* Card Styling */
 .product-card {
-  width: 220px;
-  border: 1px solid #e6e6e6;
-  border-radius: 8px;
-  padding: 12px;
-  box-sizing: border-box;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+/* Image */
 .product-image {
   width: 100%;
-  height: 140px;
+  height: 240px;
   object-fit: cover;
-  border-radius: 4px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.product-title {
-  font-size: 16px;
-  margin: 8px 0;
+/* Content */
+.product-card h3.product-title {
+  font-size: 18px;
+  margin: 16px 16px 8px;
+  font-weight: 600;
+  color: #1e293b;
 }
 
 .product-price {
-  font-weight: 600;
-  margin: 4px 0 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 16px;
 }
 
+.product-actions {
+  padding: 16px;
+  margin-top: auto; /* Push button to bottom */
+}
+
+/* Buttons */
 .btn {
-  padding: 8px 12px;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
 }
 
 .btn-primary {
-  background: var(--primary);
+  background-color: var(--primary);
   color: white;
+  width: 100%;
 }
 
-@media (max-width: 640px) {
-  .product-list {
-    gap: 10px;
-  }
-  .product-card {
-    width: calc(50% - 10px);
-  }
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 2px 4px rgb(37 99 235 / 0.3);
+}
+
+/* Search Box specific overrides if needed, but handled globally mostly */
+.search-box {
+  display: flex;
+  max-width: 500px;
+  margin-bottom: 32px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgb(37 99 235 / 0.1);
+}
+
+.search-box button {
+  border-radius: 0 8px 8px 0;
 }

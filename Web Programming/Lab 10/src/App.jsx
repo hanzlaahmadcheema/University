@@ -19,7 +19,7 @@ function App() {
       
       <div className="grid-container">
 
-        <NameCard name="Hanzla Ahmad" />
+        <NameCard name="Mubashir Zulfiqar" />
 
 
         <Counter initialCount={10} />
